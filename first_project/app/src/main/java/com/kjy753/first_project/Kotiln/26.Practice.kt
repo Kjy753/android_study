@@ -1,0 +1,42 @@
+package com.kjy753.first_project.Kotiln
+
+// 과제
+// Night, Monster (부모)
+// SuperNight,SuperMonster (자식)
+
+fun main(array: Array<String>){
+    val monster1 = SuperMonster(100,10)
+    val night = SuperNight(130,8)
+    monster1.attack(night)
+    monster1.bite(night)
+
+}
+
+open class Charator(var hp:Int, val power:Int){
+    fun attack(charator:Charator,power:Int = this.power){
+        charator.defense(power)
+    }
+    open fun defense(damage:Int ){
+        hp -= damage
+        if(hp>0){
+            println("${javaClass.simpleName}의 남은 체력 $hp 입니다.")
+        }else{
+            println("사망 했습니다.")
+        }
+    }
+}
+
+//자식 클래스가 인스턴스화 되기 위해서는 부모 클래스가 선행되서 인스턴스화 되어야 한다.
+class SuperMonster(hp:Int, power: Int) : Charator(hp,power){
+
+    fun bite(charator:Charator){
+        super.attack(charator,power+2)
+    }
+}
+
+class SuperNight(hp:Int, power:Int):Charator(hp,power){
+    val defensPower = 2
+    override fun defense(damage: Int) {
+        super.defense(damage -defensPower)
+    }
+}
