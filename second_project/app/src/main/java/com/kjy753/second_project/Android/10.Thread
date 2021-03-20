@@ -1,0 +1,19 @@
+
+Thread(쓰레드)
+-작업 흐름
+
+앱실행 ----> launcher Activity -----> 라이프사이클
+
+안드로이드의 쓰레드
+-> MainThread
+-------------------------------->
+    -> luancherActivity
+                        -> Activity B 실행
+                                        ->영상 재생
+                                                    -> 여러작업
+
+안드로이드 MainThread의 특징
+- UI Thread
+    -사용자의 input을 받는 쓰레드
+-절대 정지 시킬수 없다 (하면 안됨)
+    -왜냐하면, 정지시키거나, 종료시키면 더이상 사용자의 input을 받지 못하기 떄문에 안됨.
