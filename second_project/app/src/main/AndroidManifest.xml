@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kjy753.second_project">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +12,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
-        <activity android:name=".ThreadActivity">
+        <activity android:name=".PermissionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Context">
+        <activity android:name=".NetworkActivity">
 
         </activity>
-        <activity android:name=".Resource"></activity>
+        <activity android:name=".RealmActivity"></activity>
+        <activity android:name=".SharedPreferenceActivity" />
+        <activity android:name=".TabPager2Activity" />
+        <activity android:name=".TabPagerActivity" />
+        <activity android:name=".RecyclerViewActivity2" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".ListVIewActivity" />
+        <activity android:name=".AddViewActivity" />
+        <activity android:name=".LibraryActivity" />
+        <activity android:name=".ThreadActivity" />
+        <activity android:name=".Context" />
+        <activity android:name=".Resource" />
         <activity android:name=".MainActivity" />
     </application>
 
